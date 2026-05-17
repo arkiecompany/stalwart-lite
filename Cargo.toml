@@ -166,7 +166,7 @@ unicode-normalization = "0.1.25"
 percent-encoding = "2.3.1"
 futures-util = "0.3.28"
 tokio-tungstenite = "0.28"
-tungstenite = "0.28"
+tungstenite = "0.29"
 num_cpus = "1.17"
 
 [target.'cfg(not(target_env = "msvc"))'.dependencies]
