@@ -17,7 +17,7 @@ tokio = { version = "1.50", features = ["full"] }
 num_cpus = "1.13.1"
 clap = { version = "4.1.6", features = ["derive"] }
 prettytable-rs = "0.10.0"
-rpassword = "7.0"
+rpassword = "7.5"
 indicatif = "0.17.0"
 console = { version = "0.15", default-features = false, features = ["ansi-parsing"] }
 serde = { version = "1.0", features = ["derive"]}
