@@ -1,9 +1,8 @@
 [package]
 name = "stalwart-lite"
-description = "Stalwart Mail and Collaboration Server"
-authors = ["Stalwart Labs LLC <hello@stalw.art>"]
-repository = "https://github.com/tschk/stalwart-lite"
-homepage = "https://github.com/tschk/stalwart-lite"
+description = "A rewrite of Stalwart Mail Server as an embeddable Rust crate."
+authors = ["Max Carter <max@undivisible.dev>"]
+repository = "https://github.com/arkiecompany/stalwart-lite"
 keywords = ["imap", "jmap", "smtp", "email", "webdav"]
 categories = ["email"]
 license.workspace = true
