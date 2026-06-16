@@ -4,9 +4,8 @@ Guidance for coding agents working in `stalwart-lite`.
 
 ## Project Purpose
 
-`stalwart-lite` is a small fork of `stalwartlabs/stalwart` for Unthought
-deployments. Keep the fork close to upstream, but preserve the lite-specific
-behavior:
+`stalwart-lite` is a small fork of `stalwartlabs/stalwart`. Keep the fork
+close to upstream, but preserve the lite-specific behavior:
 
 - Do not restore bundled webadmin download logic.
 - Do not restore bundled webadmin update routes.

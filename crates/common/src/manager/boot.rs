@@ -370,7 +370,7 @@ impl BootManager {
                         insert_keys.push(ConfigKey::from(*key));
                     }
                 }
-                // Webadmin intentionally disabled in the Unthought fork
+                // Webadmin intentionally disabled in stalwart-lite
                 if let Some(blob_store) = config
                     .value("storage.blob")
                     .and_then(|id| stores.blob_stores.get(id))
