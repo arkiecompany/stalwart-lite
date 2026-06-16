@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Guidance for coding agents working in `stalwart-lite`.
+Guidance for coding agents working in `stalwart`.
 
 ## Project Purpose
 
@@ -11,7 +11,7 @@ to upstream, but preserve the lite-specific behavior:
 - Do not restore bundled webadmin update routes.
 - Do not restore static serving of bundled webadmin assets.
 - Keep install and release links pointed at `tschk/stalwart-lite`.
-- Keep fork notes in `STALWART-LITE.md` and project-facing docs in `README.md`.
+- Keep fork notes in `STALWART.md` and project-facing docs in `README.md`.
 - Crate names are `stalwart`, `stalwart-cli`, `stalwart-event-macro`, `stalwart-proc-macros`.
 
 ## Upstream Sync Rules
@@ -37,7 +37,7 @@ When comparing or importing from upstream Stalwart:
 ## Current Fork-Specific Paths
 
 - `README.md`: user-facing fork README.
-- `STALWART-LITE.md`: maintainer notes and fork rationale.
+- `STALWART.md`: maintainer notes and fork rationale.
 - `install.sh`: downloads release artifacts from `tschk/stalwart-lite`.
 - `Dockerfile`, `Dockerfile.build`, `Dockerfile.fdb`: Docker build/runtime
   entrypoints.
