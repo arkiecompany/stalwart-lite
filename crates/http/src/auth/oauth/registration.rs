@@ -17,7 +17,7 @@ use crate::directory::{
         PrincipalField, PrincipalSet, lookup::DirectoryStore, manage::ManageDirectory,
     },
 };
-use crate::store::rand::{Rng, distr::Alphanumeric, rng};
+use crate::store::rand::{RngExt, distr::Alphanumeric, rng};
 use crate::trc::{AddContext, AuthEvent};
 
 use crate::http::auth::authenticate::Authenticator;

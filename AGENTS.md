@@ -4,14 +4,15 @@ Guidance for coding agents working in `stalwart-lite`.
 
 ## Project Purpose
 
-`stalwart-lite` is a small fork of `stalwartlabs/stalwart`. Keep the fork
-close to upstream, but preserve the lite-specific behavior:
+`stalwart` is a small fork of `stalwartlabs/stalwart`. Keep the fork close
+to upstream, but preserve the lite-specific behavior:
 
 - Do not restore bundled webadmin download logic.
 - Do not restore bundled webadmin update routes.
 - Do not restore static serving of bundled webadmin assets.
 - Keep install and release links pointed at `tschk/stalwart-lite`.
 - Keep fork notes in `STALWART-LITE.md` and project-facing docs in `README.md`.
+- Crate names are `stalwart`, `stalwart-cli`, `stalwart-event-macro`, `stalwart-proc-macros`.
 
 ## Upstream Sync Rules
 

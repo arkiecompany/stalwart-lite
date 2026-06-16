@@ -5,6 +5,7 @@
  */
 
 use crate::{
+use rand::RngExt;
     AssertConfig, TEST_USERS, add_test_certs,
     directory::internal::TestInternalDirectory,
     jmap::{assert_is_empty, wait_for_index},

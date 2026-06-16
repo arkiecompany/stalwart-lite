@@ -12,7 +12,7 @@ use crate::common::{
 };
 use crate::smtp::queue::{Error, ErrorDetails, HostResponse, Status};
 use mail_auth::{IpLookupStrategy, MX};
-use rand::{Rng, seq::SliceRandom};
+use rand::{RngExt, seq::SliceRandom};
 use std::{future::Future, net::IpAddr, sync::Arc};
 
 pub struct IpLookupResult {

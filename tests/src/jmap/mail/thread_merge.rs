@@ -5,6 +5,7 @@
  */
 
 use crate::{
+use rand::RngExt;
     jmap::{JMAPTest, mail::mailbox::destroy_all_mailboxes_no_wait, wait_for_index},
     store::deflate_test_resource,
 };

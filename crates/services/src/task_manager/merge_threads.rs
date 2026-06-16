@@ -12,7 +12,6 @@ use crate::email::message::{
 use crate::store::{
     IndexKeyPrefix, IterateParams, U32_LEN, ValueKey,
     ahash::{AHashMap, AHashSet},
-    rand::Rng,
     write::{
         AlignedBytes, Archive, BatchBuilder, IndexPropertyClass, ValueClass,
         key::DeserializeBigEndian,
@@ -23,6 +22,7 @@ use crate::types::{
     collection::{Collection, SyncCollection},
     field::EmailField,
 };
+use rand::RngExt;
 use std::time::Duration;
 
 const MAX_RETRIES: usize = 5;

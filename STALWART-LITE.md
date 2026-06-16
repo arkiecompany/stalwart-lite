@@ -4,7 +4,7 @@ Fork of [stalwartlabs/stalwart](https://github.com/stalwartlabs/stalwart): same 
 
 - Default branch: `main` (upstream `main` plus small lite-only commits on top; see `git log`)
 - Rebase onto upstream periodically and resolve conflicts as needed.
-- GitHub releases are the supported publishing path. crates.io publication needs the registry migration described in [PUBLISHING.md](./PUBLISHING.md).
+- GitHub releases and crates.io are both publishing paths. See [PUBLISHING.md](./PUBLISHING.md).
 
 See commit history on `main` for the exact diff.
 

@@ -1,6 +1,6 @@
-# stalwart-lite
+# stalwart
 
-`stalwart-lite` is a maintained fork of
+`stalwart` is a maintained fork of
 [Stalwart](https://github.com/stalwartlabs/stalwart) as a crate.
 It keeps the Stalwart mail and collaboration server, but removes the bundled
 webadmin asset path from this repository: no webadmin bundle download, no
@@ -17,11 +17,10 @@ Main differences from upstream:
 - Bundled webadmin download/update/static-serving code is disabled.
 - Release and install assets point at `tschk/stalwart-lite`.
 - Docker and test example files are kept current with upstream where useful.
-- Local project notes live in [STALWART-LITE.md](./STALWART-LITE.md).
 
 ## Protocols And Features
 
-`stalwart-lite` inherits Stalwart's Rust mail server stack, including:
+`stalwart` inherits Stalwart's Rust mail server stack, including:
 
 - SMTP inbound, outbound, submission, queueing, DKIM, DMARC, SPF, ARC, MTA-STS,
   DANE, throttling, filtering, and reporting.
@@ -47,14 +46,14 @@ cargo check --workspace
 Release binary:
 
 ```bash
-cargo build --release -p stalwart-lite --no-default-features \
+cargo build --release -p stalwart --no-default-features \
   --features "sqlite postgres mysql rocks s3 redis azure nats enterprise"
 ```
 
 CLI:
 
 ```bash
-cargo build --release -p stalwart-lite-cli
+cargo build --release -p stalwart-cli
 ```
 
 ## Docker
@@ -62,7 +61,7 @@ cargo build --release -p stalwart-lite-cli
 Build the runtime image from this repo:
 
 ```bash
-docker build -t stalwart-lite .
+docker build -t stalwart .
 ```
 
 Run with explicit config and data volumes:
@@ -72,7 +71,7 @@ docker run --rm \
   -p 25:25 -p 587:587 -p 993:993 -p 8080:8080 \
   -v "$PWD/config:/etc/stalwart" \
   -v "$PWD/data:/var/lib/stalwart" \
-  stalwart-lite
+  stalwart
 ```
 
 Current Docker images run as the `stalwart` user, store config under
@@ -90,7 +89,7 @@ curl -fsSL https://raw.githubusercontent.com/tschk/stalwart-lite/main/install.sh
 Custom prefix:
 
 ```bash
-sudo sh install.sh /opt/stalwart-lite
+sudo sh install.sh /opt/stalwart
 ```
 
 FoundationDB build:
@@ -105,11 +104,8 @@ GitHub releases are the supported distribution path for this fork. Release
 publishing is driven by pushed tags that match `v*.*.*`, and generated assets
 are consumed by [install.sh](./install.sh).
 
-This repository is not currently ready for crates.io publication. The server
-package depends on local workspace crates through path-only dependencies, and
-those internal crates would need registry-safe package names and published
-versions before `cargo publish` can work. See [PUBLISHING.md](./PUBLISHING.md)
-for the exact crates.io migration checklist.
+crates.io publication follows the helper-crate-first order described in
+[PUBLISHING.md](./PUBLISHING.md).
 
 ## Test Infrastructure
 
@@ -132,7 +128,6 @@ upstream, review changes carefully and preserve the lite-specific behavior:
 
 - Do not restore bundled webadmin download/update/static-serving code.
 - Keep installer and release links pointed at `tschk/stalwart-lite`.
-- Keep fork-specific notes in [STALWART-LITE.md](./STALWART-LITE.md).
 
 ## Documentation And Support
 

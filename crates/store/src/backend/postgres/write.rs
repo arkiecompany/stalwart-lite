@@ -16,6 +16,7 @@ use crate::store::{
 use ahash::AHashMap;
 use deadpool_postgres::Object;
 use rand::Rng;
+use rand::RngExt;
 use std::time::{Duration, Instant};
 use tokio_postgres::{IsolationLevel, error::SqlState};
 

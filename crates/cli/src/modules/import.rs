@@ -26,7 +26,7 @@ use mail_parser::mailbox::{
     maildir,
     mbox::{self, MessageIterator},
 };
-use rand::Rng;
+use rand::RngExt;
 use serde::de::DeserializeOwned;
 use tokio::{fs::File, io::AsyncReadExt};
 

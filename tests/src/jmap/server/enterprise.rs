@@ -9,6 +9,7 @@
  */
 
 use crate::{
+use rand::RngExt;
     AssertConfig,
     directory::internal::TestInternalDirectory,
     imap::{ImapConnection, Type},

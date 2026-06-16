@@ -9,7 +9,7 @@ use crate::Server;
 use crate::directory::{PrincipalData, QueryParams};
 use crate::store::{
     blake3,
-    rand::{Rng, rng},
+    rand::{RngExt, rng},
 };
 use crate::trc::AddContext;
 use crate::utils::codec::leb128::{Leb128Iterator, Leb128Vec};

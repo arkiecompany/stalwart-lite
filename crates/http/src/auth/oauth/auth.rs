@@ -20,7 +20,7 @@ use crate::store::{
 };
 use crate::store::{
     rand::{
-        Rng,
+        RngExt,
         distr::{Alphanumeric, StandardUniform},
         rng,
     },

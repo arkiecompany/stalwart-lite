@@ -14,7 +14,7 @@ use crate::common::{
 use crate::smtp::queue::{Recipient, spool::LOCK_EXPIRY};
 use crate::store::write::now;
 use ahash::AHashMap;
-use rand::{Rng, seq::SliceRandom};
+use rand::{RngExt, seq::SliceRandom};
 use std::{
     collections::hash_map::Entry,
     sync::{Arc, atomic::Ordering},

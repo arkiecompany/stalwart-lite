@@ -1,6 +1,6 @@
 [package]
-name = "stalwart-lite-proc-macros"
-description = "Proc macro support for stalwart-lite"
+name = "stalwart-proc-macros"
+description = "Proc macro support for stalwart"
 version.workspace = true
 license.workspace = true
 repository = "https://github.com/tschk/stalwart-lite"

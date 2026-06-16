@@ -1,5 +1,5 @@
 [package]
-name = "stalwart-lite"
+name = "stalwart"
 description = "A rewrite of Stalwart Mail Server as an embeddable Rust crate."
 authors = ["Max Carter <max@undivisible.dev>"]
 repository = "https://github.com/arkiecompany/stalwart-lite"
@@ -32,8 +32,8 @@ name = "stalwart_lib"
 path = "crates/main/src/lib.rs"
 
 [dependencies]
-event_macro = { path = "crates/trc/event-macro", version = "0.15.6", package = "stalwart-lite-event-macro" }
-proc_macros = { path = "crates/utils/proc-macros", version = "0.15.6", package = "stalwart-lite-proc-macros" }
+event_macro = { path = "crates/trc/event-macro", version = "0.15.6", package = "stalwart-event-macro" }
+proc_macros = { path = "crates/utils/proc-macros", version = "0.15.6", package = "stalwart-proc-macros" }
 sieve-rs = { version = "0.7", features = ["rkyv", "serde"] }
 mail-parser = { version = "0.11", features = ["full_encoding", "rkyv"] }
 mail-builder = { version = "0.4" }
@@ -164,7 +164,7 @@ unicode-general-category = "1.1.0"
 unicode-normalization = "0.1.25"
 percent-encoding = "2.3.1"
 futures-util = "0.3.28"
-tokio-tungstenite = "0.28"
+tokio-tungstenite = "0.29"
 tungstenite = "0.29"
 num_cpus = "1.17"
 

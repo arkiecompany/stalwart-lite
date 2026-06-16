@@ -1,6 +1,6 @@
 # Publishing
 
-`stalwart-lite` publishes release artifacts through GitHub releases and crates.io.
+`stalwart` publishes release artifacts through GitHub releases and crates.io.
 
 ## GitHub Releases
 
@@ -22,29 +22,29 @@ Release workflows trigger on tags matching `v*.*.*`.
 
 ### Package layout
 
-`stalwart-lite` is published from the repository root. Internal Stalwart modules
+`stalwart` is published from the repository root. Internal Stalwart modules
 remain under `crates/*/src`, but they are compiled as modules of the root
-`stalwart-lite` package.
+`stalwart` package.
 
 Rust proc macros must live in separate crates, so two helper crates are
 published first:
 
-- `stalwart-lite-event-macro`
-- `stalwart-lite-proc-macros`
+- `stalwart-event-macro`
+- `stalwart-proc-macros`
 
 ### Publish order
 
 ```bash
-cargo publish --dry-run -p stalwart-lite-event-macro
-cargo publish -p stalwart-lite-event-macro
-cargo publish --dry-run -p stalwart-lite-proc-macros
-cargo publish -p stalwart-lite-proc-macros
-cargo publish --dry-run -p stalwart-lite
-cargo publish -p stalwart-lite
+cargo publish --dry-run -p stalwart-event-macro
+cargo publish -p stalwart-event-macro
+cargo publish --dry-run -p stalwart-proc-macros
+cargo publish -p stalwart-proc-macros
+cargo publish --dry-run -p stalwart
+cargo publish -p stalwart
 ```
 
 The main crate depends on the helper crates by registry version, so crates.io
-must finish indexing the helpers before publishing `stalwart-lite`.
+must finish indexing the helpers before publishing `stalwart`.
 
 ### Validation
 

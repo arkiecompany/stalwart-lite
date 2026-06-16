@@ -5,6 +5,7 @@
  */
 
 use ahash::AHashSet;
+use rand::RngExt;
 use std::collections::HashSet;
 use store::{
     Store, ValueKey,

@@ -5,6 +5,7 @@
  */
 
 use crate::store::deflate_test_resource;
+use rand::RngExt;
 use ahash::AHashSet;
 use nlp::language::Language;
 use std::{

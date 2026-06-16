@@ -6,7 +6,7 @@
 
 use std::time::Duration;
 
-use crate::store::rand::{Rng, distr::Alphanumeric, rng};
+use crate::store::rand::{RngExt, distr::Alphanumeric, rng};
 use crate::utils::config::Config;
 use biscuit::{
     jwa::{Algorithm, SignatureAlgorithm},

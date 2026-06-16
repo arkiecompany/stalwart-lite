@@ -5,6 +5,7 @@
  */
 
 use crate::jmap::{assert_is_empty, mail::mailbox::destroy_all_mailboxes_no_wait, wait_for_index};
+use rand::RngExt;
 use common::Server;
 use directory::backend::internal::manage::ManageDirectory;
 use email::{

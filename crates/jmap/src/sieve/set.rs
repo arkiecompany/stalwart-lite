@@ -24,7 +24,7 @@ use crate::jmap_proto::{
 };
 use crate::store::{
     Serialize, SerializeInfallible, ValueKey,
-    rand::{Rng, rng},
+    rand::{RngExt, rng},
     write::{AlignedBytes, Archive, Archiver, BatchBuilder},
 };
 use crate::trc::AddContext;

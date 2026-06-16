@@ -6,7 +6,7 @@
 
 #![allow(clippy::large_futures)]
 
-use crate::store::rand::{Rng, distr::Alphanumeric};
+use crate::store::rand::{RngExt, distr::Alphanumeric};
 use crate::types::{acl::AclGrant, special_use::SpecialUse};
 use crate::utils::{
     cache::{Cache, CacheItemWeight, CacheWithTtl},

@@ -21,7 +21,7 @@ use crate::common::{
 };
 use crate::store::{
     Stores,
-    rand::{Rng, distr::Alphanumeric, rng},
+    rand::{RngExt, distr::Alphanumeric, rng},
 };
 use crate::utils::{
     UnwrapFailure,

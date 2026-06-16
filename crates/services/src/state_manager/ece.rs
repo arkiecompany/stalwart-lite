@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-SEL
  */
-use crate::store::rand::Rng;
+use crate::store::rand::RngExt;
 use aes_gcm::{Aes128Gcm, Nonce, aead::Aead};
 use hkdf::Hkdf;
 use p256::{
