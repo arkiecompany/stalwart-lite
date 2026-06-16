@@ -1,7 +1,7 @@
 # stalwart-lite
 
 `stalwart-lite` is a maintained fork of
-[Stalwart](https://github.com/stalwartlabs/stalwart) for Unthought deployments.
+[Stalwart](https://github.com/stalwartlabs/stalwart) as a crate.
 It keeps the Stalwart mail and collaboration server, but removes the bundled
 webadmin asset path from this repository: no webadmin bundle download, no
 webadmin update route, and no static serving of bundled webadmin files.
@@ -11,13 +11,6 @@ workflow otherwise track upstream Stalwart as closely as possible.
 
 [![CI](https://img.shields.io/github/actions/workflow/status/tschk/stalwart-lite/ci.yml?style=flat-square)](https://github.com/tschk/stalwart-lite/actions/workflows/ci.yml)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg?label=license&style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
-
-## Why This Fork Exists
-
-Unthought builds Stalwart inside its own deployment pipeline and does not want
-the upstream bundled webadmin behavior in the server binary. This fork is kept
-small on purpose so upstream changes can be reviewed and merged without turning
-the project into a separate product.
 
 Main differences from upstream:
 
