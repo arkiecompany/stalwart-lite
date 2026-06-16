@@ -76,9 +76,9 @@ impl CalendarCopyMoveRequestHandler for Server {
                 .as_ref()
                 .is_some_and(|name| name == from_resource_name)
         {
-            return Err(DavError::Condition(crate::DavErrorCondition::new(
+            return Err(DavError::Condition(crate::dav::DavErrorCondition::new(
                 StatusCode::FORBIDDEN,
-                dav_proto::schema::response::CalCondition::DefaultCalendarNeeded,
+                crate::dav_proto::schema::response::CalCondition::DefaultCalendarNeeded,
             )));
         }
 
