@@ -1,6 +1,6 @@
 [package]
-name = "stalwart-event-macro"
-description = "Event macro support for stalwart"
+name = "stalwart-lite-event-macro"
+description = "Event macro support for stalwart-lite"
 version.workspace = true
 license.workspace = true
 repository = "https://github.com/tschk/stalwart-lite"

@@ -1,4 +1,4 @@
-# stalwart
+# stalwart-lite
 
 Fork of [stalwartlabs/stalwart](https://github.com/stalwartlabs/stalwart): same mail server, **bundled webadmin disabled** (no download, no update route, no static asset serving from the webadmin bundle).
 

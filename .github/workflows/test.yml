@@ -27,15 +27,15 @@ jobs:
 
       - name: JMAP Protocol Tests
         run: |
-          cargo test -p stalwart jmap_proto:: -- --nocapture
+          cargo test -p stalwart-lite jmap_proto:: -- --nocapture
 
       - name: IMAP Protocol Tests
         run: |
-          cargo test -p stalwart imap_proto:: -- --nocapture
+          cargo test -p stalwart-lite imap_proto:: -- --nocapture
 
       - name: Full-text search Tests
         run: |
-          cargo test -p stalwart store:: -- --nocapture
+          cargo test -p stalwart-lite store:: -- --nocapture
 
       - name: Workspace Tests
         run: cargo test --workspace

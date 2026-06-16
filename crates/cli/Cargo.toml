@@ -1,5 +1,5 @@
 [package]
-name = "stalwart-cli"
+name = "stalwart-lite-cli"
 description = "Stalwart Server CLI"
 authors = ["Stalwart Labs LLC <hello@stalw.art>"]
 license.workspace = true

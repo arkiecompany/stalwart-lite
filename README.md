@@ -1,6 +1,6 @@
-# stalwart
+# stalwart-lite
 
-`stalwart` is a maintained fork of
+`stalwart-lite` is a maintained fork of
 [Stalwart](https://github.com/stalwartlabs/stalwart) as a crate.
 It keeps the Stalwart mail and collaboration server, but removes the bundled
 webadmin asset path from this repository: no webadmin bundle download, no
@@ -20,7 +20,7 @@ Main differences from upstream:
 
 ## Protocols And Features
 
-`stalwart` inherits Stalwart's Rust mail server stack, including:
+`stalwart-lite` inherits Stalwart's Rust mail server stack, including:
 
 - SMTP inbound, outbound, submission, queueing, DKIM, DMARC, SPF, ARC, MTA-STS,
   DANE, throttling, filtering, and reporting.
@@ -46,14 +46,14 @@ cargo check --workspace
 Release binary:
 
 ```bash
-cargo build --release -p stalwart --no-default-features \
+cargo build --release -p stalwart-lite --no-default-features \
   --features "sqlite postgres mysql rocks s3 redis azure nats enterprise"
 ```
 
 CLI:
 
 ```bash
-cargo build --release -p stalwart-cli
+cargo build --release -p stalwart-lite-cli
 ```
 
 ## Docker
@@ -61,7 +61,7 @@ cargo build --release -p stalwart-cli
 Build the runtime image from this repo:
 
 ```bash
-docker build -t stalwart .
+docker build -t stalwart-lite .
 ```
 
 Run with explicit config and data volumes:
@@ -71,7 +71,7 @@ docker run --rm \
   -p 25:25 -p 587:587 -p 993:993 -p 8080:8080 \
   -v "$PWD/config:/etc/stalwart" \
   -v "$PWD/data:/var/lib/stalwart" \
-  stalwart
+  stalwart-lite
 ```
 
 Current Docker images run as the `stalwart` user, store config under
@@ -89,7 +89,7 @@ curl -fsSL https://raw.githubusercontent.com/tschk/stalwart-lite/main/install.sh
 Custom prefix:
 
 ```bash
-sudo sh install.sh /opt/stalwart
+sudo sh install.sh /opt/stalwart-lite
 ```
 
 FoundationDB build:
