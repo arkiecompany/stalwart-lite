@@ -142,7 +142,7 @@ sequoia-openpgp = { version = "2.0", default-features = false, features = ["cryp
 hyper-util = { version = "0.1.1", features = ["tokio"] }
 http-body-util = "0.1.0"
 async-stream = "0.3.5"
-quick-xml = "0.38"
+quick-xml = "0.40"
 pkcs8 = { version = "0.10.2", features = ["alloc", "std"] }
 rev_lines = "0.3.0"
 form-data = { version = "0.6.0", features = ["sync"], default-features = false }
