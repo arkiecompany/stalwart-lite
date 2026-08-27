@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-SEL
  */
 
-use std::{borrow::Cow, collections::BTreeSet, fmt::Display, io::Cursor};
+use std::{borrow::Cow, fmt::Display, io::Cursor};
 
 use aes::cipher::{BlockEncryptMut, KeyIvInit, block_padding::Pkcs7};
 
@@ -297,8 +297,7 @@ impl EncryptMessage for Message<'_> {
                 })?;
 
                 // Encrypt key using public keys
-                #[allow(clippy::mutable_key_type)]
-                let mut recipient_infos = BTreeSet::new();
+                let mut recipient_infos = Vec::new();
                 for cert in params.certs.iter() {
                     let cert =
                         rasn::der::decode::<rasn_pkix::Certificate>(cert).map_err(|err| {
@@ -324,7 +323,7 @@ impl EncryptMessage for Message<'_> {
                         })
                         .unwrap();
 
-                    recipient_infos.insert(RecipientInfo::KeyTransRecipientInfo(
+                    recipient_infos.push(RecipientInfo::KeyTransRecipientInfo(
                         KeyTransRecipientInfo {
                             version: 0.into(),
                             rid: RecipientIdentifier::IssuerAndSerialNumber(
@@ -357,7 +356,7 @@ impl EncryptMessage for Message<'_> {
                         rasn::der::encode(&EnvelopedData {
                             version: 0.into(),
                             originator_info: None,
-                            recipient_infos,
+                            recipient_infos: recipient_infos.into(),
                             encrypted_content_info: EncryptedContentInfo {
                                 content_type: CONTENT_DATA.into(),
                                 content_encryption_algorithm: AlgorithmIdentifier {

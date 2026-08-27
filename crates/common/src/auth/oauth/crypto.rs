@@ -10,20 +10,17 @@ use aes_gcm_siv::{AeadInPlace, Aes256GcmSiv, KeyInit, Nonce, aead::Aead};
 pub struct SymmetricEncrypt {
     aes: Aes256GcmSiv,
 }
-
-//TODO: Remove allow deprecated when aes-gcm is updated
 #[allow(deprecated)]
 impl SymmetricEncrypt {
     pub const ENCRYPT_TAG_LEN: usize = 16;
     pub const NONCE_LEN: usize = 12;
 
     pub fn new(key: &[u8], context: &str) -> Self {
+        let derived = blake3::derive_key(context, key);
+        let mut key_bytes = [0u8; 32];
+        key_bytes.copy_from_slice(&derived[..32]);
         SymmetricEncrypt {
-            aes: Aes256GcmSiv::new(
-                &sha1::digest::generic_array::GenericArray::clone_from_slice(
-                    &blake3::derive_key(context, key)[..],
-                ),
-            ),
+            aes: Aes256GcmSiv::new_from_slice(&key_bytes).expect("valid key length"),
         }
     }
 

@@ -50,7 +50,7 @@ pub const SMFIC_UNKNOWN: u8 = b'U'; /* Any unknown command */
 impl Command<'_> {
     fn build(command: u8, len: u32) -> Vec<u8> {
         let mut buf = Vec::with_capacity(len as usize + 1 + std::mem::size_of::<u32>());
-        buf.extend_from_slice((len + 1).to_be_bytes().as_ref());
+        buf.extend_from_slice(&(len + 1).to_be_bytes());
         buf.push(command);
         buf
     }
@@ -95,7 +95,7 @@ impl Command<'_> {
                 buf.extend(hostname);
                 buf.push(0x00);
                 buf.push(family);
-                buf.extend(port.to_be_bytes().as_ref());
+                buf.extend_from_slice(&port.to_be_bytes());
                 buf.extend(address.as_bytes());
                 buf.push(0x00);
                 buf
@@ -111,7 +111,7 @@ impl Command<'_> {
                 for macro_ in macros.macros {
                     buf.extend(macro_.name);
                     buf.push(0x00);
-                    buf.extend(macro_.value.as_ref());
+                    buf.extend(macro_.value.as_ref() as &[u8]);
                     buf.push(0x00);
                 }
                 buf
@@ -168,9 +168,9 @@ impl Command<'_> {
             }
             Command::OptionNegotiation(opt) => {
                 let mut buf = Command::build(SMFIC_OPTNEG, 3 * std::mem::size_of::<u32>() as u32);
-                buf.extend(opt.version.to_be_bytes().as_ref());
-                buf.extend(opt.actions.to_be_bytes().as_ref());
-                buf.extend(opt.protocol.to_be_bytes().as_ref());
+                buf.extend_from_slice(&opt.version.to_be_bytes());
+                buf.extend_from_slice(&opt.actions.to_be_bytes());
+                buf.extend_from_slice(&opt.protocol.to_be_bytes());
                 buf
             }
             Command::Quit => Command::build(SMFIC_QUIT, 0),
@@ -417,7 +417,7 @@ impl Response {
                             + std::mem::size_of::<u32>() as u32
                             + 2,
                     );
-                    buf.extend(index.to_be_bytes().as_ref());
+                    buf.extend_from_slice(&index.to_be_bytes());
                     buf.extend(name.as_bytes());
                     buf.push(0x00);
                     buf.extend(value.as_bytes());
@@ -432,7 +432,7 @@ impl Response {
                             + std::mem::size_of::<u32>() as u32
                             + 2,
                     );
-                    buf.extend(index.to_be_bytes().as_ref());
+                    buf.extend_from_slice(&index.to_be_bytes());
                     buf.extend(name.as_bytes());
                     buf.push(0x00);
                     buf.extend(value.as_bytes());
@@ -451,9 +451,9 @@ impl Response {
             Response::SetSymbols => Command::build(SMFIR_SETSYMLIST, 0),
             Response::OptionNegotiation(opt) => {
                 let mut buf = Command::build(SMFIC_OPTNEG, 3 * std::mem::size_of::<u32>() as u32);
-                buf.extend(opt.version.to_be_bytes().as_ref());
-                buf.extend(opt.actions.to_be_bytes().as_ref());
-                buf.extend(opt.protocol.to_be_bytes().as_ref());
+                buf.extend_from_slice(&opt.version.to_be_bytes());
+                buf.extend_from_slice(&opt.actions.to_be_bytes());
+                buf.extend_from_slice(&opt.protocol.to_be_bytes());
                 buf
             }
         }

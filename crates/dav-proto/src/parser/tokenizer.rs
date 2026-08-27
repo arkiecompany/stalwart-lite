@@ -51,7 +51,8 @@ impl<'x> Tokenizer<'x> {
                         .map_err(|err| Error::Xml(Box::new(err.into())));
                 }
                 Event::GeneralRef(entity) => {
-                    hashify::fnc_map!(entity.as_ref(),
+                    let entity_ref: &[u8] = entity.as_ref();
+                    hashify::fnc_map!(entity_ref,
                         b"lt" => { return Ok(Token::Text("<".into())); },
                         b"gt" => { return Ok(Token::Text(">".into())); },
                         b"amp" => { return Ok(Token::Text("&".into())); },

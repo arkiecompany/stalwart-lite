@@ -1,0 +1,17 @@
+[package]
+name = "stalwart"
+version = "0.16.0"
+edition = "2024"
+license = "AGPL-3.0-only"
+description = "Full-featured Stalwart mail server — embeddable Rust crate with all enterprise features"
+authors = ["Max Carter <max@undivisible.dev>"]
+repository = "https://github.com/tschk/stalwart-lite"
+keywords = ["imap", "jmap", "smtp", "email", "webdav"]
+categories = ["email"]
+
+[lib]
+name = "stalwart"
+path = "src/lib.rs"
+
+[dependencies]
+stalwart-lite = { version = "0.16.0", path = "../..", features = ["sqlite"] }
