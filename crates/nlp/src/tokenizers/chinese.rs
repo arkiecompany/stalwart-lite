@@ -58,9 +58,9 @@ where
                                 .into_iter()
                                 .map(|word| {
                                     let token_from = token_to;
-                                    token_to += word.len();
+                                    token_to += word.word.len();
                                     Token {
-                                        word: I::new_alphabetic(word),
+                                        word: I::new_alphabetic(word.word),
                                         from: token_from,
                                         to: token_to,
                                     }
@@ -74,9 +74,9 @@ where
                                 .into_iter()
                                 .map(|word| {
                                     let token_from = token_to;
-                                    token_to += word.len();
+                                    token_to += word.word.len();
                                     Token {
-                                        word: I::new_alphabetic(word.to_string()),
+                                        word: I::new_alphabetic(word.word.to_string()),
                                         from: token_from,
                                         to: token_to,
                                     }

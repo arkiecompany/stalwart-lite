@@ -58,7 +58,7 @@ impl WordStemTokenizer {
             }
             Stemmer::Mandarin => {
                 for word in JIEBA.cut(word, false) {
-                    cb(Cow::from(word));
+                    cb(Cow::from(word.word));
                 }
             }
             Stemmer::Japanese => {
