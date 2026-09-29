@@ -82,7 +82,7 @@ impl Principal {
                                     .details(otp_auth.to_compact_string())
                             })?
                             .check_current(totp_token)
-                            .unwrap_or(false);
+                            .is_some();
                     Ok(result)
                 } else if verify_secret_hash(password, code).await? {
                     // Only let the client know if the TOTP code is missing
