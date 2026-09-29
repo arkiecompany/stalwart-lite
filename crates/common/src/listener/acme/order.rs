@@ -269,9 +269,7 @@ impl Server {
                         if let Err(err) = updater
                             .create(
                                 &name,
-                                DnsRecord::TXT {
-                                    content: dns_proof.clone(),
-                                },
+                                DnsRecord::TXT(dns_proof.clone()),
                                 *ttl,
                                 &origin,
                             )
