@@ -7395,7 +7395,7 @@ dependencies = [
  "tokio",
  "tokio-postgres",
  "tokio-rustls 0.26.4",
- "tokio-tungstenite 0.29.0",
+ "tokio-tungstenite 0.30.0",
  "totp-rs",
  "tungstenite 0.30.0",
  "unicode-general-category",
@@ -7817,14 +7817,14 @@ dependencies = [
 
 [[package]]
 name = "tokio-tungstenite"
-version = "0.29.0"
+version = "0.30.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8f72a05e828585856dacd553fba484c242c46e391fb0e58917c942ee9202915c"
+checksum = "17a073bfed563fa236697a068031408a93cd9522e08abf9933ead3e73411bd71"
 dependencies = [
  "futures-util",
  "log",
  "tokio",
- "tungstenite 0.29.0",
+ "tungstenite 0.30.0",
 ]
 
 [[package]]
@@ -8111,22 +8111,6 @@ dependencies = [
  "sha1 0.10.7",
  "thiserror 2.0.20",
  "utf-8",
-]
-
-[[package]]
-name = "tungstenite"
-version = "0.29.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c01152af293afb9c7c2a57e4b559c5620b421f6d133261c60dd2d0cdb38e6b8"
-dependencies = [
- "bytes",
- "data-encoding",
- "http 1.5.0",
- "httparse",
- "log",
- "rand 0.9.5",
- "sha1 0.10.7",
- "thiserror 2.0.20",
 ]
 
 [[package]]
