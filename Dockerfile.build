@@ -39,8 +39,8 @@ RUN \
     zig version
 # Install cargo-binstall
 RUN curl --retry 5 -fL --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-# Install cargo-chef & sccache & cargo-zigbuild
-RUN cargo binstall --no-confirm cargo-chef sccache cargo-zigbuild
+# Install cargo-chef, sccache, and the Zig 0.13-compatible cargo-zigbuild
+RUN cargo binstall --no-confirm cargo-chef sccache cargo-zigbuild@0.22.3
 
 # *****************
 # Planner
