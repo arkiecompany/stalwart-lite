@@ -267,12 +267,7 @@ impl Server {
 
                         // Create the record
                         if let Err(err) = updater
-                            .create(
-                                &name,
-                                DnsRecord::TXT(dns_proof.clone()),
-                                *ttl,
-                                &origin,
-                            )
+                            .create(&name, DnsRecord::TXT(dns_proof.clone()), *ttl, &origin)
                             .await
                         {
                             return Err(EventType::Acme(AcmeEvent::DnsRecordCreationFailed)

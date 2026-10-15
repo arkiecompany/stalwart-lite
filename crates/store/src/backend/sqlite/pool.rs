@@ -72,7 +72,7 @@ impl SqliteConnectionManager {
     /// true for every connection.
     ///
     /// ```rust,no_run
-    /// # use r2d2_sqlite::{SqliteConnectionManager};
+    /// # use stalwart_lib::store::backend::sqlite::pool::SqliteConnectionManager;
     /// let manager = SqliteConnectionManager::file("app.db")
     ///     .with_init(|c| c.execute_batch("PRAGMA foreign_keys=1;"));
     /// ```
