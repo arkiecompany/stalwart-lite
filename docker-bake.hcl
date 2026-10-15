@@ -27,9 +27,8 @@ target "build" {
   cache-from = [
     "type=registry,ref=${GHCR_REPO}-buildcache:${TARGET}"
   ]
-  cache-to = [
-    "type=registry,ref=${GHCR_REPO}-buildcache:${TARGET},mode=max,compression=zstd,compression-level=9,force-compression=true,oci-mediatypes=true,image-manifest=false"
-  ]
+  # Trial-only: keep build-only workflow_dispatch runs from writing to GHCR.
+  cache-to = []
   context = "./"
   dockerfile = "Dockerfile.build"
   output = ["./artifact"]
