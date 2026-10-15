@@ -166,10 +166,9 @@ impl PartialEq for Token<'_> {
             }
             (Self::Bytes(l0), Self::Bytes(r0)) => l0 == r0,
             (Self::Text(l0), Self::Text(r0)) => l0 == r0,
-            (Self::UnknownElement(l0), Self::UnknownElement(r0)) => l0
-                .element
-                .as_ref()
-                .eq_ignore_ascii_case(r0.element.as_ref()),
+            (Self::UnknownElement(l0), Self::UnknownElement(r0)) => {
+                (&*l0.element).eq_ignore_ascii_case(&*r0.element)
+            }
             _ => core::mem::discriminant(self) == core::mem::discriminant(other),
         }
     }
