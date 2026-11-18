@@ -12,7 +12,7 @@
 set -e
 set -u
 
-readonly BASE_URL="https://github.com/tschk/stalwart-lite/releases/latest/download"
+readonly BASE_URL="https://github.com/arkiecompany/stalwart-lite/releases/latest/download"
 
 main() {
     downloader --check

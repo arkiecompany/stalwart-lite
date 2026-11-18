@@ -5,7 +5,7 @@ edition = "2024"
 license = "AGPL-3.0-only"
 description = "Full-featured Stalwart mail server — embeddable Rust crate with all enterprise features"
 authors = ["Max Carter <max@undivisible.dev>"]
-repository = "https://github.com/tschk/stalwart-lite"
+repository = "https://github.com/arkiecompany/stalwart-lite"
 keywords = ["imap", "jmap", "smtp", "email", "webdav"]
 categories = ["email"]
 

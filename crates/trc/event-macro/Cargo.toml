@@ -3,8 +3,8 @@ name = "stalwart-lite-event-macro"
 description = "Event macro support for stalwart-lite"
 version.workspace = true
 license.workspace = true
-repository = "https://github.com/tschk/stalwart-lite"
-homepage = "https://github.com/tschk/stalwart-lite"
+repository = "https://github.com/arkiecompany/stalwart-lite"
+homepage = "https://github.com/arkiecompany/stalwart-lite"
 edition = "2024"
 
 [lib]

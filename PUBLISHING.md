@@ -16,7 +16,7 @@ Release workflows trigger on tags matching `v*.*.*`.
 
 3. Wait for the release workflow to finish.
 4. Verify the release assets and install script still point at
-   `tschk/stalwart-lite`.
+   `arkiecompany/stalwart-lite`.
 
 ## crates.io
 

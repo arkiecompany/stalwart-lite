@@ -10,7 +10,7 @@ to upstream, but preserve the lite-specific behavior:
 - Do not restore bundled webadmin download logic.
 - Do not restore bundled webadmin update routes.
 - Do not restore static serving of bundled webadmin assets.
-- Keep install and release links pointed at `tschk/stalwart-lite`.
+- Keep install and release links pointed at `arkiecompany/stalwart-lite`.
 - Keep fork notes in `STALWART.md` and project-facing docs in `README.md`.
 - Crate names are `stalwart-lite`, `stalwart-lite-cli`, `stalwart-lite-event-macro`, `stalwart-lite-proc-macros`.
 
@@ -38,7 +38,7 @@ When comparing or importing from upstream Stalwart:
 
 - `README.md`: user-facing fork README.
 - `STALWART.md`: maintainer notes and fork rationale.
-- `install.sh`: downloads release artifacts from `tschk/stalwart-lite`.
+- `install.sh`: downloads release artifacts from `arkiecompany/stalwart-lite`.
 - `Dockerfile`, `Dockerfile.build`, `Dockerfile.fdb`: Docker build/runtime
   entrypoints.
 - `tests/docker/`: upstream-derived local integration service stack.

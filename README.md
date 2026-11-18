@@ -9,13 +9,13 @@ webadmin update route, and no static serving of bundled webadmin files.
 The server, management APIs, protocol support, storage backends, and release
 workflow otherwise track upstream Stalwart as closely as possible.
 
-[![CI](https://img.shields.io/github/actions/workflow/status/tschk/stalwart-lite/ci.yml?style=flat-square)](https://github.com/tschk/stalwart-lite/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/arkiecompany/stalwart-lite/ci.yml?style=flat-square)](https://github.com/arkiecompany/stalwart-lite/actions/workflows/ci.yml)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg?label=license&style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
 
 Main differences from upstream:
 
 - Bundled webadmin download/update/static-serving code is disabled.
-- Release and install assets point at `tschk/stalwart-lite`.
+- Release and install assets point at `arkiecompany/stalwart-lite`.
 - Docker and test example files are kept current with upstream where useful.
 
 ## Protocols And Features
@@ -83,7 +83,7 @@ Current Docker images run as the `stalwart` user, store config under
 The install script downloads release assets from this repository:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tschk/stalwart-lite/main/install.sh | sudo sh
+curl -fsSL https://raw.githubusercontent.com/arkiecompany/stalwart-lite/main/install.sh | sudo sh
 ```
 
 Custom prefix:
@@ -127,7 +127,7 @@ This repo is meant to stay close to upstream Stalwart. When updating from
 upstream, review changes carefully and preserve the lite-specific behavior:
 
 - Do not restore bundled webadmin download/update/static-serving code.
-- Keep installer and release links pointed at `tschk/stalwart-lite`.
+- Keep installer and release links pointed at `arkiecompany/stalwart-lite`.
 
 ## Documentation And Support
 
